@@ -1,0 +1,5 @@
+target/classes target/generated-sources target/generated-test-sources target/jacoco.exec target/maven-archiver target/maven-status target/poc-consulta-credito-backend-0.0.1.jar target/poc-consulta-credito-backend-0.0.1.jar.original target/site target/surefire-reports target/test-classes
+target/
+.settings/
+.classpath
+.project

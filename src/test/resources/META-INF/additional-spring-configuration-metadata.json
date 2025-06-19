@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "banestes.sso.realm",
+    "type": "java.lang.String",
+    "description": "A description for 'banestes.sso.realm'"
+  },
+  {
+    "name": "banestes.sso.url",
+    "type": "java.lang.String",
+    "description": "A description for 'banestes.sso.url'"
+  },
+  {
+    "name": "banestes.sso.client-id",
+    "type": "java.lang.String",
+    "description": "A description for 'banestes.sso.client-id'"
+  },
+  {
+    "name": "banestes.sso.username",
+    "type": "java.lang.String",
+    "description": "A description for 'banestes.sso.username'"
+  },
+  {
+    "name": "banestes.sso.client-secret",
+    "type": "java.lang.String",
+    "description": "A description for 'banestes.sso.client-secret'"
+  },
+  {
+    "name": "banestes.sso.password",
+    "type": "java.lang.String",
+    "description": "A description for 'banestes.sso.password'"
+  }
+]}

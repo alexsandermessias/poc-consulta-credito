@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/postgres'
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: secreta
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  mvc:
+    log-request-details: true
+  codec:
+    log-request-details: true
+  main:
+    allow-bean-definition-overriding: true
+
+  flyway:
+    enabled: false
+    
+logging:
+  level:
+     root: ${LOG_LEVEL:INFO}
+    # '[org.springframework.web.client]': ${LOG_LEVEL:ERROR} 
+    # '[org.hibernate.validator]': ${LOG_LEVEL:ERROR}
+    # '[org.hibernate.SQL]': ${LOG_LEVEL:ERROR}
+    # '[org.hibernate.type.descriptor.sql]': ${LOG_LEVEL:ERROR}
+    # '[org.springframework.web]': ${LOG_LEVEL:INFO}
+    # '[reactor.netty.http.client]': ${LOG_LEVEL:INFO}
+
+kafka:
+   bootstrapServers: localhost:9092
+   topic: test-topic    
+   

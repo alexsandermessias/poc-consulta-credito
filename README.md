@@ -1,5 +1,5 @@
-# poc-consulta-credito
-Consulta de Crédito - POC
+# Projeto consulta de créditos constituídos
+
 Este projeto consulta dados armazenados no banco de dados através de dois endpints, um por número 
 
 Para executar o projeto os seguintes passos deverão ser executados.
@@ -20,12 +20,19 @@ Para executar o projeto os seguintes passos deverão ser executados.
  -  Executar o comando "docker exec --workdir /opt/kafka/bin/ -it broker sh" para acessar o container do Kafka.
  -  Executar o comando "./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic test-topic" para criar o tópico.
  
+ 
+ 
 **Instruções para executar o projeto**
  - Entrar na pasta do projeto 
  - Executar o comando "mvn flyway:migrate -Dflyway.configFiles=flyway.properties" para criar a tabela no banco de dados.
  - Executar o comando "mvn install" para instalar as dependencias do projeto.
- - Executar o comando "SPRING_PROFILES_ACTIVE=default,dev mvn spring-boot:run" para iniciar a aplicacao.
+ 
+**Instruções para criar o container para o appicativo** 
 
+ 
+ - Executar o comando "docker build --build-arg JAR_FILE=target/\*.jar -t springboot/poc-consulta-credito-backend . "
+ - Executar o comando "docker build -t springboot/poc-consulta-credito-backend . "
+ - Executar o comando "docker run -p 8080:8080 springboot/poc-consulta-credito-backend "
  
 
 **Diagrama de Sequência da  Consulta de Crédito**
