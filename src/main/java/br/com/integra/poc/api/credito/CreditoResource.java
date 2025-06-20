@@ -15,6 +15,7 @@ public class CreditoResource implements CreditoResourceDoc {
 	private final CreditoService creditoService;
 	private final KafkaService kafkaService;
 	
+
 	public CreditoResource(CreditoService creditoService,KafkaService kafkaService) {
 		this.creditoService = creditoService;
 		this.kafkaService = kafkaService;
@@ -22,14 +23,14 @@ public class CreditoResource implements CreditoResourceDoc {
 	
 	@GetMapping("/api/creditos/{numeroNfse}")
 	@Override
-	public ResponseEntity<List<CreditoDto>> consultarPorNumeroNfse(String token, String numeroNfse) {
+	public ResponseEntity<List<CreditoDto>> consultarPorNumeroNfse(String numeroNfse) {
 		final ResponseEntity<List<CreditoDto>> response = creditoService.consultarPorNumeroNfse(numeroNfse);
 		kafkaService.log(String.format("/api/creditos/%s",numeroNfse), response);
 		return response;
 	}
 	@GetMapping("/api/creditos/credito/{numeroCredito}")
 	@Override
-	public ResponseEntity<CreditoDto> consultarPorNumeroCredito(String token, String numeroCredito) {
+	public ResponseEntity<CreditoDto> consultarPorNumeroCredito(String numeroCredito) {
 		final ResponseEntity<CreditoDto> response = creditoService.consultarPorNumeroCredito(numeroCredito);
 		kafkaService.log(String.format("/api/creditos/credito/%s",numeroCredito), response);
 		return response;

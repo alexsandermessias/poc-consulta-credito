@@ -50,52 +50,52 @@ class CreditoResouceTest {
 		list.add(getDto());
 		final ResponseEntity<List<CreditoDto>>  response = ResponseEntity.ok(list);
 		when(service.consultarPorNumeroNfse(any())).thenReturn(response);
-		assertEquals(HttpStatus.OK, resource.consultarPorNumeroNfse(TestData.vString, TestData.vString).getStatusCode());
+		assertEquals(HttpStatus.OK, resource.consultarPorNumeroNfse( TestData.vString).getStatusCode());
 	}
 	@Test
 	void consultarPorNumeroNfse_400() {
 		final ResponseEntity<List<CreditoDto>>  response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 		when(service.consultarPorNumeroNfse(any())).thenReturn(response);
-		assertEquals(HttpStatus.BAD_REQUEST, resource.consultarPorNumeroNfse(TestData.vString, TestData.vString).getStatusCode());
+		assertEquals(HttpStatus.BAD_REQUEST, resource.consultarPorNumeroNfse( TestData.vString).getStatusCode());
 	}
 	@Test
 	void consultarPorNumeroNfse_404() {
 		final ResponseEntity<List<CreditoDto>>  response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 		when(service.consultarPorNumeroNfse(any())).thenReturn(response);
-		assertEquals(HttpStatus.NOT_FOUND, resource.consultarPorNumeroNfse(TestData.vString, TestData.vString).getStatusCode());
+		assertEquals(HttpStatus.NOT_FOUND, resource.consultarPorNumeroNfse( TestData.vString).getStatusCode());
 
 	}
 	@Test
 	void consultarPorNumeroNfse_500() {
 		final ResponseEntity<List<CreditoDto>>  response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
 		when(service.consultarPorNumeroNfse(any())).thenReturn(response);
-		assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, resource.consultarPorNumeroNfse(TestData.vString, TestData.vString).getStatusCode());
+		assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, resource.consultarPorNumeroNfse( TestData.vString).getStatusCode());
 	}
 	@Test
 	void consultarPorNumeroCredito_200() {
 	
 		final ResponseEntity<CreditoDto>  response = ResponseEntity.ok(getDto());
 		when(service.consultarPorNumeroCredito(any())).thenReturn(response);
-		assertEquals(HttpStatus.OK, resource.consultarPorNumeroCredito(TestData.vString, TestData.vString).getStatusCode());
+		assertEquals(HttpStatus.OK, resource.consultarPorNumeroCredito( TestData.vString).getStatusCode());
 	}
 	@Test
 	void consultarPorNumeroCredito_400() {
 		final ResponseEntity<CreditoDto>  response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 		when(service.consultarPorNumeroCredito(any())).thenReturn(response);
-		assertEquals(HttpStatus.BAD_REQUEST, resource.consultarPorNumeroCredito(TestData.vString, TestData.vString).getStatusCode());
+		assertEquals(HttpStatus.BAD_REQUEST, resource.consultarPorNumeroCredito( TestData.vString).getStatusCode());
 	}
 	@Test
 	void consultarPorNumeroCredito_404() {
 		final ResponseEntity<CreditoDto>  response = ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 		when(service.consultarPorNumeroCredito(any())).thenReturn(response);
-		assertEquals(HttpStatus.NOT_FOUND, resource.consultarPorNumeroCredito(TestData.vString, TestData.vString).getStatusCode());
+		assertEquals(HttpStatus.NOT_FOUND, resource.consultarPorNumeroCredito( TestData.vString).getStatusCode());
 
 	}
 	@Test
 	void consultarPorNumeroCredito_500() {
 		final ResponseEntity<CreditoDto>  response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
 		when(service.consultarPorNumeroCredito(any())).thenReturn(response);
-		assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, resource.consultarPorNumeroCredito(TestData.vString, TestData.vString).getStatusCode());
+		assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, resource.consultarPorNumeroCredito( TestData.vString).getStatusCode());
 	}
 	
 	

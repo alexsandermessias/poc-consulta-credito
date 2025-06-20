@@ -18,7 +18,9 @@ logging:
     '[org.hibernate.type.descriptor.sql]': trace
 
 
-endpoints:
-  url: https://api.github.com/repos/%s/%s/issues
-  urlWebHook: https://webhook.site/3c79ab69-d95c-49f1-b1cd-44cc3c7c6027
+kafka:
+   bootstrapServers: localhost:9092
+   topic: test-topic    
+cors:
+   origins: http://172.17.0.2   
  

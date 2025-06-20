@@ -23,13 +23,13 @@ spring:
 logging:
   level:
     root: ${LOG_LEVEL:error}
-    "[br.com.integra.poc.api]": trace
-    '[org.springframework.web.client]': ${LOG_LEVEL:trace} 
+   # "[br.com.integra.poc.api]": trace
+   # '[org.springframework.web.client]': ${LOG_LEVEL:trace} 
    #  '[org.hibernate.validator]': ${LOG_LEVEL:trace}
    #  '[org.hibernate.SQL]': ${LOG_LEVEL:trace}
    #  '[org.hibernate.type.descriptor.sql]': ${LOG_LEVEL:trace}
-    '[org.springframework.web]': ${LOG_LEVEL:trace}
-    '[reactor.netty.http.client]': ${LOG_LEVEL:trace}
+   # '[org.springframework.web]': ${LOG_LEVEL:trace}
+   # '[reactor.netty.http.client]': ${LOG_LEVEL:trace}
  
 server:
   address: 0.0.0.0
@@ -47,6 +47,6 @@ management:
 kafka:
    bootstrapServers: 172.17.0.3:9092
    topic: test-topic		
-endpoints:
-   url: https://api.github.com/repos/%s/%s/issues
-   urlWebHook: https://webhook.site/3c79ab69-d95c-49f1-b1cd-44cc3c7c6027
+cors:
+   origins: http://localhost:8100
+   

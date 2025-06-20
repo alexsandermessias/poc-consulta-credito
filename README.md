@@ -16,7 +16,7 @@ Para executar o projeto os seguintes passos deverão ser executados.
  -  Executar o comando "docker run  --ip  127.0.0.1  -h dbserver  -dti  --privileged=true  -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=secreta -d postgres" para iniciar o banco de dados.
  
 **Instruções para Configuração do Kafka** 
- -  Executar o comando "docker run --p 9092:9092 -d --name broker apache/kafka:latest" para criar o container do Kafka.
+ -  Executar o comando "docker run -p 9092:9092 -d --name broker --ip 172.17.0.2 apache/kafka:latest" para criar o container do Kafka.
  -  Executar o comando "docker exec --workdir /opt/kafka/bin/ -it broker sh" para acessar o container do Kafka.
  -  Executar o comando "./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic test-topic" para criar o tópico.
  
@@ -27,12 +27,14 @@ Para executar o projeto os seguintes passos deverão ser executados.
  - Executar o comando "mvn flyway:migrate -Dflyway.configFiles=flyway.properties" para criar a tabela no banco de dados.
  - Executar o comando "mvn install" para instalar as dependencias do projeto.
  
+ 
+ 
+ 
 **Instruções para criar o container para o appicativo** 
 
  
- - Executar o comando "docker build --build-arg JAR_FILE=target/\*.jar -t springboot/poc-consulta-credito-backend . "
- - Executar o comando "docker build -t springboot/poc-consulta-credito-backend . "
- - Executar o comando "docker run -p 8080:8080 springboot/poc-consulta-credito-backend "
+ - Executar o comando "docker build --build-arg JAR_FILE=target/\*.jar -t backend . "
+ - Executar o comando "docker run -p 8080:8080 -d --name backend --ip 172.17.0.5  backend "
  
 
 **Diagrama de Sequência da  Consulta de Crédito**

@@ -31,4 +31,5 @@ logging:
 kafka:
    bootstrapServers: localhost:9092
    topic: test-topic    
-   
+cors:
+   origins: http://172.17.0.2   
